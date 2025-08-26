@@ -19,7 +19,7 @@ A Dockerized .NET 8 Web API for payment processing, using **MySQL** as the datab
 
 ## Quick Start
 
-### 1. Clone the Repo
+### Clone the Repo
 
 git clone https://github.com/riteshkeshri98/My-Sample-Project.git
 cd My-Sample-Project
