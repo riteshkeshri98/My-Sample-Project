@@ -1,0 +1,39 @@
+{
+  "Version": 1,
+  "Hash": "CTdgt2sdWsyBta7yShS4k2pnPatPEoXA4IZ/HKSVEOM=",
+  "Source": "SampleProject",
+  "BasePath": "_content/SampleProject",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "SampleProject\\wwwroot",
+      "Source": "SampleProject",
+      "ContentRoot": "C:\\Users\\riteshkeshri\\Payment Sample Project\\SampleProject\\wwwroot\\",
+      "BasePath": "_content/SampleProject",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\riteshkeshri\\Payment Sample Project\\SampleProject\\wwwroot\\index.html",
+      "SourceId": "SampleProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\riteshkeshri\\Payment Sample Project\\SampleProject\\wwwroot\\",
+      "BasePath": "_content/SampleProject",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    }
+  ]
+}

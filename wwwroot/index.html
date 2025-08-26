@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Payment Card Form</title>
+  <h3>A Sample Project for Docker by Ritesh </h3>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f7f9fc;
+      color: #333;
+    }
+
+    h2 {
+      text-align: center;
+      color: #2c3e50;
+    }
+
+    .form-group, .actions {
+      display: flex;
+      gap: 10px;
+      margin: 15px 0;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    input {
+      padding: 10px;
+      width: 200px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    button {
+      padding: 10px 15px;
+      background-color: #3498db;
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    hr {
+      margin: 30px 0;
+    }
+
+    pre {
+      background: #fff;
+      padding: 20px;
+      border: 1px solid #ccc;
+      width: 80%;
+      margin: 0 auto;
+      overflow-x: auto;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Payment Card Form</h2>
+
+  <div class="form-group">
+    <input id="cardNumber" placeholder="Card Number" />
+    <input id="userName" placeholder="Username" />
+    <input id="cvv" placeholder="CVV" />
+    <input id="expiryDate" placeholder="MM/YY" />
+    <button onclick="createCard()">Save</button>
+  </div>
+
+  <hr />
+
+  <div class="actions">
+    <input id="getId" placeholder="Card ID" />
+    <button onclick="getCard()">Get</button>
+    <button onclick="deleteCard()">Delete</button>
+    <button onclick="getAllCards()">Get All</button>
+
+  </div>
+
+  <pre id="output">Results will appear here...</pre>
+
+  <script>
+    const API = "http://localhost:5000/api/paymentcard";
+
+    async function createCard() {
+      const data = {
+        cardNumber: document.getElementById("cardNumber").value,
+        userName: document.getElementById("userName").value,
+        cvv: document.getElementById("cvv").value,
+        expiryDate: document.getElementById("expiryDate").value
+      };
+      const res = await fetch(API, {
+        method: "POST",
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      const result = await res.json();
+      show(result);
+      await getAllCards();
+      clearForm();
+    }
+
+    async function getCard() {
+      const id = document.getElementById("getId").value;
+      const res = await fetch(`${API}/${id}`);
+      const result = await res.json();
+      show(result);
+      clearForm();
+    }
+
+    async function deleteCard() {
+      const id = document.getElementById("getId").value;
+      const res = await fetch(`${API}/${id}`, { method: "DELETE" });
+      if (res.status === 204) show("Deleted successfully");
+      else show("Delete failed");
+      await getAllCards();
+      clearForm();
+    }
+
+    async function getAllCards() {
+      const res = await fetch(API); 
+      const result = await res.json();
+      show(result);
+      clearForm();
+    }
+
+    function clearForm() {
+      document.getElementById("cardNumber").value = "";
+      document.getElementById("userName").value = "";
+      document.getElementById("cvv").value = "";
+      document.getElementById("expiryDate").value = "";
+      document.getElementById("getId").value = "";
+    }
+
+    function show(data) {
+      document.getElementById("output").textContent = JSON.stringify(data, null, 2);
+    }
+  </script>
+</body>
+</html>
