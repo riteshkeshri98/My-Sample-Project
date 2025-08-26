@@ -4192,11 +4192,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\riteshkeshri\\Payment Sample Project\\SampleProject\\SampleProject.csproj",
+      "projectUniqueName": "C:\\Users\\riteshkeshri\\Sample Project\\My-Sample-Project\\SampleProject\\SampleProject.csproj",
       "projectName": "SampleProject",
-      "projectPath": "C:\\Users\\riteshkeshri\\Payment Sample Project\\SampleProject\\SampleProject.csproj",
+      "projectPath": "C:\\Users\\riteshkeshri\\Sample Project\\My-Sample-Project\\SampleProject\\SampleProject.csproj",
       "packagesPath": "C:\\Users\\riteshkeshri\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\riteshkeshri\\Payment Sample Project\\SampleProject\\obj\\",
+      "outputPath": "C:\\Users\\riteshkeshri\\Sample Project\\My-Sample-Project\\SampleProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\riteshkeshri\\AppData\\Roaming\\NuGet\\NuGet.Config"
