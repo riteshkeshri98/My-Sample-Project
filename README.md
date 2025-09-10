@@ -10,10 +10,15 @@ A Dockerized .NET 8 Web API for payment processing, using **MySQL** as the datab
 
 ## Tech Stack
 
-- .NET 8 Web API
-- MySQL 8.0
-- Redis (latest)
-- Docker & Docker Compose
+- ASP.NET Core Web API (paymentsampleproject_webapi)
+
+- MySQL database (mysql:8.0)
+
+- Redis cache (redis:alpine)
+
+- Docker Compose orchestration
+
+- Security best practices implemented
 
 ---
 
@@ -40,7 +45,7 @@ Build and Run with Docker
 docker-compose build
 docker-compose up
 
-Your API will be live at: http://localhost:5000
+API will be live at: http://localhost:5000
 
 Services in docker-compose.yml
 
@@ -61,6 +66,11 @@ docker-compose down             # Stop all services
 docker ps                       # List running containers
 docker logs <container>         # View container logs
 docker exec -it <container> sh  # Shell into a container
+
+Security Hardening Steps:
+Non-root Users
+Custom non-root users are created for containers instead of running as root.
+Added in Dockerfile (WebAPI) and via user: "1000:1000" in docker-compose.yml for MySQL & Redis.
 
 
 Push to Docker Hub
