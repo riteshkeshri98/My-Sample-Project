@@ -2,9 +2,10 @@ version: '3.3'
 
 services:
   webapi:
-    build:
-      context: ./SampleProject
-      dockerfile: Dockerfile
+    image: riteshkeshri/paymentsampleproject_webapi:latest
+    # build:
+    #   context: ./SampleProject
+    #   dockerfile: Dockerfile
     user: "1000:1000"   # <-- Run as non-root appuser
     depends_on:
       - mysql
